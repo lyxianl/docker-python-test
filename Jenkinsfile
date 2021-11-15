@@ -1,7 +1,10 @@
 pipeline {
     agent {
-        dockerfile true
-        args '-t test-docker'
+        dockerfile {
+            filename 'Dockerfile'
+            label 'my-defined-label'
+            args '-t test-docker'
+        }
     }
     stages {
         stage('Echo') {
