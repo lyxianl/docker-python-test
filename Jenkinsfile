@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh('''
                 docker images -a
-                docker build -t fromImage:latest .
+                docker build -t test-image:latest .
                 docker images -a
                 ''')
             }
