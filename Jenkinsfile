@@ -1,10 +1,10 @@
 pipeline {
     agent {
         dockerfile {
-            filename 'Dockerfile'
+            // filename 'Dockerfile'
             label 'linux-agent-any'
             // args '-t test-docker'
-            args '-t lyxian/flask-demo'
+            args '-t lyxian/flask-demo:1'
         }
     }
     stages {
