@@ -14,6 +14,7 @@ pipeline {
             steps {
                 sh('''
                 docker run --rm -d -p 5050:80 --name test-image test-image:latest
+                sleep 20
                 ''')
             }
         }
