@@ -17,5 +17,13 @@ pipeline {
                 ''')
             }
         }
+        stage('Stop') {
+            steps {
+                input 'Stop?'
+                sh('''
+                docker stop test-image
+                ''')
+            }
+        }
     }
 }
