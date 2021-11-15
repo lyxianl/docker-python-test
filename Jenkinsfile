@@ -13,7 +13,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh('''
-                docker run --rm -d -p 5005:80 --name test-image --env "FLASK_APP=main.py" test-image:latest
+                docker run --rm -d -p 5005:5005 --name test-image --env "FLASK_APP=main.py" test-image:latest
                 ''')
             }
         }
