@@ -1,18 +1,12 @@
 pipeline {
-    agent {
-        dockerfile {
-            // filename 'Dockerfile'
-            label 'linux-agent-any'
-            // args '-t test-docker'
-            args '-t lyxian/flask-demo:1'
-        }
-    }
+    agent any
     stages {
         stage('Echo') {
             steps {
                 sh('''
-                echo `env`
-                ls -ra
+                docker images -a
+                docker build -t fromImage:latest .
+                docker images -a
                 ''')
             }
         }
