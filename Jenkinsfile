@@ -1,12 +1,16 @@
 pipeline {
     agent {
-        Dockerfile true
+        docker {
+            Dockerfile true
+        }
     }
     stages {
         stage('Echo') {
-            sh('''
-            echo `env`
-            ''')
+            steps {
+                sh('''
+                echo `env`
+                ''')
+            }
         }
     }
 }
