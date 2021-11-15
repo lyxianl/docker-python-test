@@ -11,11 +11,11 @@ pipeline {
             }
         }
         stage('Run') {
-            steps(
+            steps {
                 sh('''
                 docker run --rm -d -p 5050:80 --name test-image test-image:latest
                 ''')
-            )
+            }
         }
     }
 }
